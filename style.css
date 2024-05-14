@@ -1,6 +1,31 @@
-:root {
+@font-face {
+    font-family: Dosis;
+    src: url("./Dosis/static/Dosis-Regular.ttf")
+  }
+  
+  @font-face {
+    font-family: Dosis_Bold;
+    src: url("./Dosis/static/Dosis-SemiBold.ttf")
+  }
+  
+  @font-face {
+    font-family: Dosis_Prominent;
+    src: url("./Dosis/static/Dosis-ExtraBold.ttf")
+  }
+  
+  @font-face {
+    font-family: Lockerli_One;
+    src: url("./Leckerli_One/LeckerliOne-Regular.ttf");
+  }
+  
+  @font-face {
+    font-family: Gugi;
+    src: url("./Gugi/Gugi-Regular.ttf");
+  }
+  
+  :root {
     --black: #211A1E;
-    --red: #c3423f;
+    --red: #C3423F;
     --orange: #E09546;
     --yellow: #FDE74C;
     --green: #9BC53D;
@@ -8,31 +33,296 @@
     --purple: #9952B7;
     --white: #f0f8ff;
     --grey: #5b5e68;
-}
-
-html,
-body {
-    background: var(--black);
-    color: var(--white);
-    font-family: monospace;
-    margin: 0;
+  }
+  
+  .red-theme {
+    --dark: var(--black);
+    --mid: var(--red);
+    --bright: var(--white);
+    --neutral: var(--grey);
+  }
+  
+  body,
+  html {
+    background: var(--dark);
+    font-family: Gugi;
+    color: var(--bright);
     padding: 0;
-    gap: 0;
-}
-
-td {
-    width: 150px;
-}
-
-.container {
+    margin: 0;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+  
+  }
+  
+  .section {
+    height: 100vh;
+  
+    scroll-snap-align: center;
+    position: relative;
+    aspect-ratio: calc(1vh, 1vw);
+  }
+  
+  .side {
+    width: 100%;
+    height: 100vh;
+  
+    display: grid;
+    place-items: center;
+  
+    overflow: hidden;
+    position: absolute;
+  
+    user-select: none
+  }
+  
+  .first {
+    background: var(--mid);
+    font-family: Gugi;
+    height: 100vh;
+    z-index: 2;
+  }
+  
+  .first .inText {
+    color: var(--dark);
+    margin: 0px 15vw;
+    width: 70vw;
+    font-size: 7vw;
+  }
+  
+  .first .fancy {
+    font-family: Lockerli_One;
+    color: var(--bright);
+  }
+  
+  .second {
+    background: var(--dark);
+    height: 100vh;
+    z-index: 1;
+  }
+  
+  .second .inText {
+    color: var(--bright);
+    margin: 0px 15vw;
+    width: 70vw;
+    font-size: 7vw;
+  }
+  
+  .second .fancy {
+    font-family: Lockerli_One;
+    color: var(--mid);
+  }
+  
+  
+  
+  :link {
+    text-decoration: none;
+    padding: 0;
+    height: 1rem;
+  }
+  
+  a {
+    text-decoration: none;
+    padding: 0;
+    height: 1rem;
+  }
+  
+  .page-head {
+    padding-left: 10
+  }
+  
+  .tiles {
+    user-select: none;
+  
+  }
+  
+  #tiles {
+    height: calc(100vh - 1px);
+    width: calc(100vw - 1px);
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(var(--columns), 1fr);
+    grid-template-rows: repeat(var(--rows), 1fr);
+  }
+  
+  .contContainer {
     display: flex;
-    flex-direction: row;
-}
-.vector {
-    margin: 0;
-}
-.vector td {
-    width: 50px;
-    border-block: 1px solid white;
-    margin: 0;
-}
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+  }
+  
+  ::selection {
+    color: var(--dark);
+    background-color: var(--bright);
+    outline-width: 10px;
+    outline-style: solid;
+    outline-color: var(--mid);
+    outline-offset: -2px;
+  }
+  
+  
+  .highlight,
+  a.highlight {
+    color: var(--mid);
+    font-family: Dosis_Prominent;
+  }
+  
+  a.highlight {
+    text-decoration: underline;
+    text-decoration-color: var(--mid);
+    transition: 0.2s ease-in-out;
+  }
+  
+  a.highlight:hover {
+    text-decoration-color: var(--bright);
+    transition: 0.2s ease-in-out;
+  }
+  
+  @media screen and (max-width: 100000px) {
+    .content {
+      margin: 1vw 15vw;
+      width: 70vw;
+      font-size: 8px;
+    }
+  
+    .contentHead {
+      font-size: 75px;
+      position: relative;
+      width: fit-content;
+      height: fit-content;
+    }
+  
+    .contentText {
+      font-size: 40px;
+      font-family: Dosis_Bold;
+    }
+  }
+  
+  /* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .content {
+      margin: 1vw 15vw;
+      width: 70vw;
+      font-size: 8px;
+  
+    }
+  
+    .contentHead {
+      font-size: 50px;
+      position: relative;
+      width: fit-content;
+      height: fit-content;
+    }
+  
+    .contentText {
+      font-size: 20px;
+      font-family: Dosis_Bold;
+    }
+  
+  }
+  
+  @media screen and (max-height: 400px) {
+    .content {
+      margin: 1vw 15vw;
+      width: 70vw;
+      font-size: 8px;
+  
+    }
+  
+    .contentHead {
+      font-size: 40px;
+      position: relative;
+      width: fit-content;
+      height: fit-content;
+    }
+  
+    .contentText {
+      font-size: 10px;
+    }
+  
+  
+  }
+  
+  .hidden {
+    opacity: 0%;
+    transform: translateX(-50px);
+    transition: 0.5s;
+  }
+  
+  
+  .show {
+    opacity: 100%;
+    transform: translateX(0px);
+    transition: 0.7s;
+  }
+  
+  .contentHead .borderBlock {
+    transform-origin: 100% 0;
+    top: 0;
+    right: 0;
+    position: absolute;
+    width: 300%;
+    height: 100%;
+    background: var(--mid);
+    z-index: -1;
+    transform: translateX(20px)
+  }
+  
+  .secText {
+    color: var(--bright);
+    margin: 0px 15vw;
+    width: 70vw;
+    font-size: 8vw;
+    height: fit-content
+  }
+  
+  #exhibit-4 {
+    display: grid;
+    place-content: center;
+  }
+  
+  .red-rSquare {
+    background-color: var(--red);
+    height: 20px;
+    width: 20px;
+    position: relative;
+  }
+  
+  .Lred-rSquare {
+    background-color: var(--red);
+    border-radius: 5px;
+    height: 40px;
+    width: 40px;
+    position: relative;
+  }
+  
+  .squares {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-content: center;
+    grid-template-columns: repeat(var(--columns), 20px);
+    grid-template-rows: repeat(var(--rows), 20px);
+    gap: 0px;
+  }
+  
+  #anim-two {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-content: center;
+    grid-template-columns: repeat(var(--columns), 20px);
+    grid-template-rows: repeat(var(--rows), 20px);
+    gap: 0px;
+  }
+  
+  #anim-three {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-content: center;
+    grid-template-columns: repeat(var(--columns), 20px);
+    grid-template-rows: repeat(var(--rows), px);
+    gap: 0px;
+  }
