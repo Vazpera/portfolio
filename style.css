@@ -1,329 +1,137 @@
-@font-face {
-    font-family: Dosis;
-    src: url("./Dosis/static/Dosis-Regular.ttf")
-  }
-  
-  @font-face {
-    font-family: Dosis_Bold;
-    src: url("./Dosis/static/Dosis-SemiBold.ttf")
-  }
-  
-  
-  @font-face {
-    font-family: Dosis_Prominent;
-    src: url("./Dosis/static/Dosis-ExtraBold.ttf")
-  }
-  
-  @font-face {
-    font-family: Lockerli_One;
-    src: url("./Leckerli_One/LeckerliOne-Regular.ttf");
-  }
-  
-  @font-face {
-    font-family: Gugi;
-    src: url("./Gugi/Gugi-Regular.ttf");
-  }
-  
-  :root {
-    --black: #211A1E;
-    --red: #C3423F;
-    --orange: #E09546;
-    --yellow: #FDE74C;
-    --green: #9BC53D;
-    --blue: #5BC0EB;
-    --purple: #9952B7;
-    --white: #f0f8ff;
-    --grey: #5b5e68;
-  }
-  
-  .red-theme {
-    --dark: var(--black);
-    --mid: var(--red);
-    --bright: var(--white);
-    --neutral: var(--grey);
-  }
-  
-  body,
-  html {
-    background: var(--dark);
-    font-family: Gugi;
-    color: var(--bright);
-    padding: 0;
-    margin: 0;
-    scroll-snap-type: y mandatory;
-    scroll-behavior: smooth;
-  
-  }
-  
-  .section {
-    height: 100vh;
-  
-    scroll-snap-align: center;
-    position: relative;
-    aspect-ratio: calc(1vh, 1vw);
-  }
-  
-  .side {
-    width: 100%;
-    height: 100vh;
-  
-    display: grid;
-    place-items: center;
-  
-    overflow: hidden;
-    position: absolute;
-  
-    user-select: none
-  }
-  
-  .first {
-    background: var(--mid);
-    font-family: Gugi;
-    height: 100vh;
-    z-index: 2;
-  }
-  
-  .first .inText {
-    color: var(--dark);
-    margin: 0px 15vw;
-    width: 70vw;
-    font-size: 7vw;
-  }
-  
-  .first .fancy {
-    font-family: Lockerli_One;
-    color: var(--bright);
-  }
-  
-  .second {
-    background: var(--dark);
-    height: 100vh;
-    z-index: 1;
-  }
-  
-  .second .inText {
-    color: var(--bright);
-    margin: 0px 15vw;
-    width: 70vw;
-    font-size: 7vw;
-  }
-  
-  .second .fancy {
-    font-family: Lockerli_One;
-    color: var(--mid);
-  }
-  
-  
-  
-  :link {
-    text-decoration: none;
-    padding: 0;
-    height: 1rem;
-  }
-  
-  a {
-    text-decoration: none;
-    padding: 0;
-    height: 1rem;
-  }
-  
-  .page-head {
-    padding-left: 10
-  }
-  
-  .tiles {
-    user-select: none;
-  
-  }
-  
-  #tiles {
-    height: calc(100vh - 1px);
-    width: calc(100vw - 1px);
-    position: relative;
-    z-index: 2;
-    display: grid;
-    grid-template-columns: repeat(var(--columns), 1fr);
-    grid-template-rows: repeat(var(--rows), 1fr);
-  }
-  
-  .contContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    height: 100%;
-  }
-  
-  ::selection {
-    color: var(--dark);
-    background-color: var(--bright);
-    outline-width: 10px;
-    outline-style: solid;
-    outline-color: var(--mid);
-    outline-offset: -2px;
-  }
-  
-  
-  .highlight,
-  a.highlight {
-    color: var(--mid);
-    font-family: Dosis_Prominent;
-  }
-  
-  a.highlight {
-    text-decoration: underline;
-    text-decoration-color: var(--mid);
-    transition: 0.2s ease-in-out;
-  }
-  
-  a.highlight:hover {
-    text-decoration-color: var(--bright);
-    transition: 0.2s ease-in-out;
-  }
-  
-  @media screen and (max-width: 100000px) {
-    .content {
-      margin: 1vw 15vw;
-      width: 70vw;
-      font-size: 8px;
-    }
-  
-    .contentHead {
-      font-size: 75px;
-      position: relative;
-      width: fit-content;
-      height: fit-content;
-    }
-  
-    .contentText {
-      font-size: 40px;
-      font-family: Dosis_Bold;
-    }
-  }
-  
-  /* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
-  @media screen and (max-width: 600px) {
-    .content {
-      margin: 1vw 15vw;
-      width: 70vw;
-      font-size: 8px;
-  
-    }
-  
-    .contentHead {
-      font-size: 50px;
-      position: relative;
-      width: fit-content;
-      height: fit-content;
-    }
-  
-    .contentText {
-      font-size: 20px;
-      font-family: Dosis_Bold;
-    }
-  
-  }
-  
-  @media screen and (max-height: 400px) {
-    .content {
-      margin: 1vw 15vw;
-      width: 70vw;
-      font-size: 8px;
-  
-    }
-  
-    .contentHead {
-      font-size: 40px;
-      position: relative;
-      width: fit-content;
-      height: fit-content;
-    }
-  
-    .contentText {
-      font-size: 10px;
-    }
-  
-  
-  }
-  
-  .hidden {
-    opacity: 0%;
-    transform: translateX(-50px);
-    transition: 0.5s;
-  }
-  
-  
-  .show {
-    opacity: 100%;
-    transform: translateX(0px);
-    transition: 0.7s;
-  }
-  
-  .contentHead .borderBlock {
-    transform-origin: 100% 0;
-    top: 0;
-    right: 0;
-    position: absolute;
-    width: 300%;
-    height: 100%;
-    background: var(--mid);
-    z-index: -1;
-    transform: translateX(20px)
-  }
-  
-  .secText {
-    color: var(--bright);
-    margin: 0px 15vw;
-    width: 70vw;
-    font-size: 8vw;
-    height: fit-content
-  }
-  
-  #exhibit-4 {
-    display: grid;
-    place-content: center;
-  }
-  
-  .red-rSquare {
-    background-color: var(--red);
-    height: 20px;
-    width: 20px;
-    position: relative;
-  }
-  
-  .Lred-rSquare {
-    background-color: var(--red);
-    border-radius: 5px;
-    height: 40px;
-    width: 40px;
-    position: relative;
-  }
-  
-  .squares {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    place-content: center;
-    grid-template-columns: repeat(var(--columns), 20px);
-    grid-template-rows: repeat(var(--rows), 20px);
-    gap: 0px;
-  }
-  
-  #anim-two {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    place-content: center;
-    grid-template-columns: repeat(var(--columns), 20px);
-    grid-template-rows: repeat(var(--rows), 20px);
-    gap: 0px;
-  }
-  
-  #anim-three {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    place-content: center;
-    grid-template-columns: repeat(var(--columns), 20px);
-    grid-template-rows: repeat(var(--rows), px);
-    gap: 0px;
-  }
+:root {
+  --black: #211A1E;
+  --red: #c3423f;
+  --orange: #E09546;
+  --yellow: #FDE74C;
+  --green: #9BC53D;
+  --blue: #5BC0EB;
+  --purple: #9952B7;
+  --white: #f0f8ff;
+  --grey: #5b5e68;
+}
+
+html,
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+header {
+  display: flex;
+  position: fixed;
+  flex-direction: row;
+  justify-content: space-between;
+  top: 0;
+  left: 0;
+  height: 3rem;
+  border-bottom: var(--red) solid 3px;
+  width: 100%;
+  z-index: 100;
+}
+
+
+
+.logo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: inherit;
+  left: 20px;
+  font-size: 2rem;
+  color: var(--red);
+  user-select: none;
+}
+
+nav {
+  font-size: 1.2rem;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-direction: row;
+  right: 0;
+  top: 0;
+  height: inherit;
+  align-items: center;
+}
+
+nav .anchor {
+  display: flex;
+  align-items: center;
+  padding-inline: 0.75rem;
+  color: var(--white);
+  text-decoration: underline;
+  text-decoration-color: var(--white);
+  height: inherit;
+}
+
+nav .anchor:hover {
+  color: var(--black);
+  text-decoration: underline;
+  text-decoration-color: var(--black);
+  background-color: var(--red);
+}
+
+nav .anchor.selected {
+  color: var(--red);
+  text-decoration: underline;
+  text-decoration-color: var(--red);
+}
+
+nav .anchor.selected:hover {
+  user-select: none;
+  color: var(--red);
+  background: var(--black);
+  text-decoration: underline;
+  text-decoration-color: var(--red);
+}
+
+div.hero {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+div.hero .background {
+  content: " ";
+  display: block;
+  height: calc(100% - 3rem);
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  z-index: 3;
+  opacity: 1;
+  background: url("https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  z-index: 1;
+  opacity: 0.1;
+  background-size: cover;
+}
+
+div.hero .content {
+  display: flex;
+  height: calc(100% - 3rem);
+  width: 50%;
+  position: absolute;
+  bottom: 0;
+  z-index: 3;
+  opacity: 1;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+div.hero .content p {
+  width: 100%;
+}
+
+div.hero .content p.attribution {
+  margin-left: 100%;
+  font-style: italic;
+}
+
+span.monospace {
+  font-family: monospace;
+}
