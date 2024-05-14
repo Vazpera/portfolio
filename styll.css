@@ -1,0 +1,38 @@
+:root {
+    --black: #211A1E;
+    --red: #c3423f;
+    --orange: #E09546;
+    --yellow: #FDE74C;
+    --green: #9BC53D;
+    --blue: #5BC0EB;
+    --purple: #9952B7;
+    --white: #f0f8ff;
+    --grey: #5b5e68;
+}
+
+html,
+body {
+    background: var(--black);
+    color: var(--white);
+    font-family: monospace;
+    margin: 0;
+    padding: 0;
+    gap: 0;
+}
+
+td {
+    width: 150px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+.vector {
+    margin: 0;
+}
+.vector td {
+    width: 50px;
+    border-block: 1px solid white;
+    margin: 0;
+}
