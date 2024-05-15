@@ -1,0 +1,137 @@
+:root {
+    --black: #211A1E;
+    --red: #c3423f;
+    --orange: #E09546;
+    --yellow: #FDE74C;
+    --green: #9BC53D;
+    --blue: #5BC0EB;
+    --purple: #9952B7;
+    --pink: #D26D9E;
+    --white: #f0f8ff;
+    --grey: #5b5e68;
+}
+
+.red {
+    --color: var(--red);
+}
+
+.orange {
+    --color: var(--orange);
+}
+
+.yellow {
+    --color: var(--yellow);
+}
+
+.green {
+    --color: var(--green);
+}
+
+.blue {
+    --color: var(--blue);
+}
+
+.purple {
+    --color: var(--purple);
+}
+
+.pink {
+    --color: var(--pink)
+}
+
+
+
+div#container {
+    position: absolute;
+    height: calc(100% - 3rem);
+    width: 100%;
+    top: 3rem;
+    display: flex;
+    flex-direction: row;
+}
+
+div#container div#list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.story-label i {
+    color: var(--color);
+}
+
+.story-label {
+    width: 100%;
+    display: flex;
+    direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 1rem;
+    padding: 5px;
+    user-select: none;
+}
+
+.story-label:hover {
+    color: var(--black);
+    background: var(--color);
+}
+
+.story-label:hover i {
+    color: var(--black);
+}
+
+div#container {
+    width: 100%;
+    overflow: hidden;
+}
+
+div#container div#list {
+    width: 20%;
+    padding: 10px;
+}
+
+div#container div#viewer {
+    width: 90%;
+    padding: 10px;
+    border-left: var(--red) solid 3px;
+    overflow: scroll;
+}
+
+@media screen and (max-width: 500px) {
+    div#container {
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    div#container div#list {
+        display: flex;
+        flex-direction: row;
+        padding: 0;
+        width: 100%;
+        padding: 0;
+        overflow: scroll;
+        padding-inline: 3px;
+        min-height: max-content;
+        max-width: 100%;
+    }
+
+    div#list::-webkit-scrollbar {
+        display: none;
+    }
+
+    div#container div#viewer {
+        border-left: none;
+        border-top: var(--red) solid 3px;
+        width: 95%;
+        overflow: scroll;
+        max-height: 95%;
+        padding: 0;
+
+    }
+
+    .story-label {
+        min-width: 9rem;
+        scroll-behavior: smooth;
+    }
+}
