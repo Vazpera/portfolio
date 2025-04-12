@@ -23,15 +23,6 @@ let stories = [
     <br><br>His eyes burst wide, his pupils dilating to take in the low amount of light. His voice was cracked at the first word. "Nero?" He asked aloud, and the red eyes widened. "Son?" he asked, stepping forward, his body struggling to keep whole.
     <br><br>The red eyed boy stepped back, cautious. Broch Wilder took a step forward. But there came a whistle from his lips, one that echoed in the poor boy's mind. The whistle.. it was familiar somehow. The boy was pulled back to the day he was taken, sixteen years ago. His voice ethereal, the boy spoke. "Dad?"`,
     },
-    {
-        title: "Underground",
-        story: `
-        A man covered in a robe walked through the streets of the city of Thrive, a city on the eastern side of the United Commonwealth, a prosperous country in North America. The man, however, was not prosperous. He was poor, in fact.
-        <br><br>As this man walked along, glimpses of glowing red lines seeped out of his attempt at concealing them. His face was lined with them, his ashen, dark face. His stone-cold yet fiery-hot eyes peered out amongst the crowd, inspecting them.
-        <br><br>Walking past him was a person, around his height. All he could make out was a pair of black, rectangular-rimmed glasses, nothing else. What a strange occurrence, he thought.
-        <br><br>The next couple of minutes passed by unperturbed. No inordinate events struck this man. He came to a door in a conspicuous alley. He descended the staircase which lay concealed behind the door. He came into a large arena.
-        <br><br>Tens of leering eyes stared daggers into the man, before he let his robe fall, his bright silver hair shining against the incandescent, ancient lights of the undergound arena. The poeple, upon seeing this man, Sylvester, began to cheer. The red lines that covered his ody shone bright against his dark skin, his silver hair giving the audience the illusion that he had experience.`,
-    },
 ];
 console.log(story_list);
 for (let i = 0; i < story_list.length; i++) {
